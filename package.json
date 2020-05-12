@@ -1,0 +1,16 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "\"React practise project\"",
+  "main": "app.js",
+  "dependencies": {
+    "create-react-app": "^3.4.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shivam",
+  "license": "ISC"
+}
