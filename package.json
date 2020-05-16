@@ -1,5 +1,5 @@
 {
-  "name": "react",
+  "name": "reactcollection",
   "version": "1.0.0",
   "description": "\"React practise project\"",
   "main": "app.js",
@@ -12,5 +12,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Shivam",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "reactcollection"
+  },
+  "keywords": [
+    "react"
+  ]
 }
