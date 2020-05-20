@@ -5,7 +5,8 @@
   "main": "app.js",
   "dependencies": {
     "create-react-app": "^3.4.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {},
   "scripts": {
