@@ -3,14 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {createStore} from 'redux';//this is the createStore function that will create the store
+import {createStore, compose, applyMiddleware} from 'redux';//this is the createStore function that will create the store
 import {Provider} from 'react-redux';// this is a tag used to bind redux state to the Component
 import rootReducer from './rootreducer';//this is the rootreducer
 import {BrowserRouter} from 'react-router-dom';
+import thunk from 'redux-thunk';
 
-
-const store = createStore(rootReducer,
-window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(
+  rootReducer,
+  compose(
+    applyMiddleware(thunk),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
+);
 
 ReactDOM.render(
   <Provider store={store}>

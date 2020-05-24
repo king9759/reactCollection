@@ -1,0 +1,11 @@
+{
+  "name": "todoapi",
+  "version": "1.0.0",
+  "description": "The API that will handle the backend of my react app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "manorinfinity",
+  "license": "ISC"
+}
