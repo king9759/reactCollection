@@ -1,39 +1,36 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import './App.css';
-import { ADD_TODO, REMOVE_TODO, addTodo, removeTodo, getTodos } from './actionCreator';
+import { addTodo, removeTodo, getTodos } from './actionCreator';
 import {Route} from 'react-router-dom';
 import NewForm from './newForm';
 const Todo = ({task, handleDelete}) => (
     <div>
       <li>{task}</li>
-      <button onClick={() => handleDelete(task)}>X</button>
+      <button onClick={handleDelete}>X</button>
     </div>
 );
-// The main application that will be rendered inside index.js
+
 class App extends React.Component{
   constructor(props){
     super(props);
-    this.state = {
-      todo:''
-    }
     this.handleAdd = this.handleAdd.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
   }
-  handleDelete(task, e){
-    this.props.dispatch({
-      type: REMOVE_TODO,
-      task:task
-    })
+  componentDidMount(){
+    this.props.getTodos();
   }
   handleAdd(val){
-    this.props.dispatch({
-      type: ADD_TODO,
-      task: val
-    });
+    this.props.addTodo(val);
+  }
+  removeTodo(id){
+    this.props.removeTodo(id);
   }
   render(){
-    const todos = this.props.todos.map((val,index)=>(<Todo key={index} task={val} handleDelete={this.handleDelete}></Todo>));
+    const todos = this.props.todos.map((val,index)=>(<Todo
+       key={val._id}
+       task={val.task}
+       handleDelete={this.removeTodo.bind(this,val._id)}>
+       </Todo>));
     return(
       <div>
         <Route path='/todos/new' component ={(props)=> <NewForm {...props} handleSubmit= {this.handleAdd}/>}/>

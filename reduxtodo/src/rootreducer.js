@@ -1,19 +1,19 @@
 //the reducer function that creates the store initially
-import { ADD_TODO, REMOVE_TODO } from './actionCreator';
+import { ADD_TODO, REMOVE_TODO, GET_TODOS } from './actionCreator';
 const initialState = {
-  todos: ["Last Task"],
+  todos: [],
 };
 export default function rootReducer( state = initialState, action){
   switch (action.type) {
+    case GET_TODOS:
+      return {...state, todos: action.data};//the previous state format and todos fetched from the database
     case ADD_TODO:
-      console.log(action.task);
       var modifiedState = {...state};
       modifiedState.todos.push(action.task);
-      console.log(modifiedState.todos);
       return modifiedState;
     case REMOVE_TODO:
-        var modifiedState = {...state};
-        modifiedState.todos = modifiedState.todos.filter(task=> task!== action.task);
+        modifiedState = {...state};
+        modifiedState.todos = modifiedState.todos.filter(task=> task._id!== action.task);
         return modifiedState;
     default:
       return state;
