@@ -1,0 +1,13 @@
+html, body{
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  padding: 10px;
+}
+.box{
+  padding: 40px;
+  margin: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  /* background: black; */
+}
