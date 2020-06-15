@@ -3,6 +3,7 @@
 // define a input component with all the available inputs as buttons. and add button handlers with an input element in state
 //
 import React from 'react';
+import './Calculator.css';
 import CalculatorUI from './CalculatorUI';
 import {switcher} from './switcher.js';
 class Calculator extends React.Component{
@@ -64,7 +65,7 @@ class Calculator extends React.Component{
   render(){
 
     return(
-      <div>
+      <div className="container p-3">
         <h1>{this.state.display}</h1>
         <CalculatorUI handleDisplay={this.handleDisplay} handleClickNum={this.handleClickNum} handleClickSymb={this.handleClickSymb}/>
       </div>

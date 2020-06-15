@@ -1,4 +1,5 @@
 import React from 'react';
+import './CalculatorUI.css';
 
 class CalculatorUI extends React.Component {
   static defaultProps = {
@@ -15,10 +16,10 @@ class CalculatorUI extends React.Component {
   // The h1 shall update with the value of button that clicked only if it is a number.
   // The state of main component shall contan only two numbers and one symbol for calculation
     render() {
-      var numInputs = this.state.numbers.map((num,index) => <p key={index} onClick={() => this.props.handleClickNum(num)}>{num}</p>);
-      var symbolInputs = this.state.symbols.map((symbol,index) => <p key={index} onClick={() => this.props.handleClickSymb(symbol)}>{symbol}</p>);
+      var numInputs = this.state.numbers.map((num,index) => <p className="btn btn-danger m-1" key={index} onClick={() => this.props.handleClickNum(num)}>{num}</p>);
+      var symbolInputs = this.state.symbols.map((symbol,index) => <p className="btn btn-danger m-1" key={index} onClick={() => this.props.handleClickSymb(symbol)}>{symbol}</p>);
     return(
-      <div>
+      <div className="m-4">
         {numInputs}
         {symbolInputs}
       </div>
