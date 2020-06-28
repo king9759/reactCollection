@@ -65,7 +65,7 @@ class Calculator extends React.Component{
   render(){
 
     return(
-      <div className="container p-3">
+      <div className="container">
         <h1>{this.state.display}</h1>
         <CalculatorUI handleDisplay={this.handleDisplay} handleClickNum={this.handleClickNum} handleClickSymb={this.handleClickSymb}/>
       </div>

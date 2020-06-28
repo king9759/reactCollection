@@ -1,8 +1,13 @@
 .container{
-  background: black;
-  position: relative;
-  width: 50% !important;
-  top: 25%;
-  color: white !important;
-  border-radius: 20px;
+  max-width: 300px !important;
+  background: #73674e;
+  margin-top: 10%;
+  border-radius: 10px;
+  overflow: auto;
+  color: white;
+}
+h1{
+  display: inline;
+  /* word-wrap: break-word; */
+  overflow-wrap: anywhere;
 }
